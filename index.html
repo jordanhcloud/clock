@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html style="background: #000; text-align: center;">
+	
+	<div style="margin-top: 20%;">
+		<img id="firsthoursdigit" height="12%" width="7.36%" src="numbers/zero.jpg"/>
+		<img id="secondhoursdigit" height="12%" width="7.36%" src="numbers/zero.jpg"/>
+
+		<img height="12%" width="7.36%" src="numbers/space.jpg"/>
+
+		<img id="firstminutesdigit" height="12%" width="7.36%" src="numbers/zero.jpg"/>
+		<img id="secondminutesdigit" height="12%" width="7.36%" src="numbers/zero.jpg"/>
+
+		<img height="12%" width="7.36%" src="numbers/space.jpg"/>
+
+		<img id="firstsecondsdigit" height="12%" width="7.36%" src="numbers/zero.jpg"/>
+		<img id="secondsecondsdigit" height="12%" width="7.36%" src="numbers/zero.jpg"/>
+
+	</div>
+
+	<script>
+
+		function updateSeconds() {
+
+			var d = new Date();
+		
+			var hours = d.getHours();
+			var minutes = d.getMinutes();
+			var seconds = d.getSeconds();
+
+			var firsthours = hours / 10;
+			var secondhours = hours % 10;
+			var firstminutes = minutes / 10;
+			var secondminutes = minutes % 10;
+			var firstseconds = seconds / 10;
+			var secondseconds = seconds % 10;
+
+			document.getElementById("firsthoursdigit").src = numberToImage(parseInt(firsthours));
+			document.getElementById("secondhoursdigit").src = numberToImage(secondhours);
+
+			document.getElementById("firstminutesdigit").src = numberToImage(parseInt(firstminutes));
+			document.getElementById("secondminutesdigit").src = numberToImage(secondminutes);
+			
+			document.getElementById("firstsecondsdigit").src = numberToImage(parseInt(firstseconds));
+			document.getElementById("secondsecondsdigit").src = numberToImage(secondseconds);
+
+		}
+
+		function updateSecondsPerSecond() {
+			updateSeconds()
+		}
+
+		window.setInterval(updateSecondsPerSecond, 1000);
+
+		function numberToImage(number) {
+	
+			if(number == 0){
+				return "numbers/zero.jpg";
+			}
+			if(number == 1){
+				return "numbers/one.jpg";
+			}
+			if(number == 2){
+				return "numbers/two.jpg";
+			}
+			if(number == 3){
+				return "numbers/three.jpg";
+			}
+			if(number == 4){
+				return "numbers/four.jpg";
+			}
+			if(number == 5){
+				return "numbers/five.jpg";
+			}
+			if(number == 6){
+				return "numbers/six.jpg";
+			}
+			if(number == 7){
+				return "numbers/seven.jpg";
+			}
+			if(number == 8){
+				return "numbers/eight.jpg";
+			}
+			if(number == 9){
+				return "numbers/nine.jpg";
+			}
+
+		}
+		
+	</script>
+
+</html>
+</html>
